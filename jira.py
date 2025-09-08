@@ -22,6 +22,11 @@ def is_valid_signature(secret: str, payload: bytes, header_signature: str) -> bo
     calculated_signature = method + '=' + hash_object.hexdigest()
     return hmac.compare_digest(calculated_signature, header_signature)
  
+@app.get("/")
+def Server():
+    return "..."
+
+
 @app.post('/webhook')
 async def handle_jira_webhook(request: Request):
     # Validate signature
