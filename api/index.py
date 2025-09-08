@@ -5,7 +5,7 @@ app = FastAPI()
 
 @app.get("/")
 def home():
-    return {"message": "Hello Minion! FastAPI on Vercel is working 🚀"}
+    return {"message": "Hello Minion! FastAPI is running on Vercel 🚀"}
 
-# Vercel expects a handler
+# This is critical — expose handler, not just app
 handler = Mangum(app)
